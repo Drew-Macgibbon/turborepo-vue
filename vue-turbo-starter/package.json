@@ -1,0 +1,56 @@
+{
+  "name": "rollercoaster",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "start": "turbo run start --parallel",
+    "start:apps": "turbo run start --parallel --filter='./apps/*'",
+    "start:vite-app": "turbo run start --filter vite-app",
+    "start:nuxt-app": "turbo run start --filter nuxt-app",
+    "start:storybook": "turbo run start --filter storybook",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "release": "tsx scripts/release.ts"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.16",
+    "@types/prompts": "2.4.0",
+    "@types/semver": "7.3.12",
+    "config": "workspace:*",
+    "conventional-changelog-cli": "2.2.2",
+    "execa": "6.1.0",
+    "picocolors": "1.0.0",
+    "prettier": "2.7.1",
+    "prompts": "2.4.2",
+    "semver": "7.3.7",
+    "simple-git-hooks": "2.8.0",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.1.0",
+    "tsx": "3.9.0",
+    "turbo": "1.4.6",
+    "typescript": "4.8.3",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=10",
+    "pnpm": ">=3"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm exec ts-node scripts/verifyCommit.ts $1"
+  },
+  "packageManager": "pnpm@7.11.0",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@types/react"
+      ],
+      "allowedVersions": {
+        "vite": "3"
+      }
+    }
+  }
+}

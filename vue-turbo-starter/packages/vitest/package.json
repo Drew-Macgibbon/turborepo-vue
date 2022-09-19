@@ -1,0 +1,27 @@
+{
+  "name": "vitest",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "vitest --environment jsdom --run",
+    "test:watch": "vitest --environment jsdom",
+    "typecheck": "vue-tsc --noEmit -p vitest.json --composite false",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore"
+  },
+  "main": "main.ts",
+  "dependencies": {
+    "vue": "3.2.39"
+  },
+  "devDependencies": {
+    "@types/jsdom": "20.0.0",
+    "@vitejs/plugin-vue": "3.1.0",
+    "@vue/test-utils": "2.0.2",
+    "@vue/tsconfig": "0.1.3",
+    "jsdom": "20.0.0",
+    "pinia": "2.0.22",
+    "typescript": "4.8.3",
+    "vite": "3.1.0",
+    "vite-plugin-windicss": "1.8.8",
+    "vitest": "0.23.2",
+    "vue-tsc": "0.40.13"
+  }
+}

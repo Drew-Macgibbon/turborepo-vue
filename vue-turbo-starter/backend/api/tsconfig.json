@@ -1,0 +1,13 @@
+{
+  "extends": "config",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*spec.ts"
+  ],
+}
+// TODO separate database & import as dependancy to api: https://github.com/vercel/turborepo/blob/main/examples/with-prisma/apps/web/pages/api/users.ts
